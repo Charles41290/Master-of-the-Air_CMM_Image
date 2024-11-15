@@ -11,7 +11,7 @@ This is a game developed by a student from <a href="https://www.imagecampus.edu.
 
 <p align="center">
   <a href="https://www.imagecampus.edu.ar/">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdKb_BtVoaPaGv_M3HMhSXqoGpUBABKEPM3A&s" alt="Image Campus"/>
+    <img src="[https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdKb_BtVoaPaGv_M3HMhSXqoGpUBABKEPM3A&s](https://drive.google.com/uc?id=1LVXfssU5vu1T41qxN2AJGUTx7EbtOnBc)" alt="Image Campus"/>
   </a> 
 </p>
 
