@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{a6147970-13f2-49a9-aec2-6645752ef4dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{e5f6a68a-283a-475c-a537-8c4d73a2cba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Handlers">
+      <UniqueIdentifier>{749d3391-3ee2-4445-b46d-e74d08471eaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Handlers">
+      <UniqueIdentifier>{c1faef85-dd48-4beb-a4af-f1ce9a79401b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Elements">
+      <UniqueIdentifier>{7a4131f2-05ed-4b21-8c6d-677bb6d8d0cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Elements\depracted">
+      <UniqueIdentifier>{eb48b5c3-d79f-4c09-af5e-2fd6f7f99b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Elements">
+      <UniqueIdentifier>{464cf3b7-5b9f-4e1a-9737-7762fc08c81c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Elements\deprecated">
+      <UniqueIdentifier>{b2119b18-6110-4ffe-a271-78dbd00ad986}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\Background.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\CollisionsHandler.cpp">
+      <Filter>Source Files\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GamePlay.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\GameObject.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\EnemyShip.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Bullet2.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Bound.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Player.cpp">
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Bullet.cpp">
+      <Filter>Source Files\Game Elements\deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\EnemyBullet.cpp">
+      <Filter>Source Files\Game Elements\deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\PlayerBullet.cpp">
+      <Filter>Source Files\Game Elements\deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\MainMenu.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\Credits.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\Tutorial.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\DefeatedScene.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Escenas\WinnedScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\Background.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\CollisionsHandler.h">
+      <Filter>Header Files\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Bound.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Bullet2.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\EnemyShip.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\GameObject.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GamePlay.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Player.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Bullet.h">
+      <Filter>Header Files\Game Elements\depracted</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\PlayerBullet.h">
+      <Filter>Header Files\Game Elements\depracted</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\EnemyBullet.h">
+      <Filter>Header Files\Game Elements\depracted</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\MainMenu.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\Credits.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\Tutorial.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\DefeatedScene.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Escenas\WinnedScene.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
