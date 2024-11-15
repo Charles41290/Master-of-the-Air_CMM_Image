@@ -23,7 +23,7 @@ This game was also possible thanks to the support of these professors:
 
 ## Acknowledgements
 
-- ****Federico Olive**
+- **Federico Olive**
 
 ## Links
 
