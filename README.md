@@ -21,10 +21,5 @@ This is a game developed by a student from <a href="https://www.imagecampus.edu.
 This game was also possible thanks to the support of these professors:
 - **Federico Olive**
 
-## Acknowledgements
-
-- **Federico Olive**
-
 ## Links
-
 Download it from itch.io: https://charles41290.itch.io/master-of-the-air
