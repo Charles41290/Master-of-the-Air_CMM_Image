@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://alpha-wolf-studios.itch.io/alignment">
-<img src="logo.png" alt="Aligment"/>
+<img src="https://drive.google.com/uc?id=1D9tQQIeCtEbWH9ZRTFEe8c0ntxIDp_HM" alt="Aligment"/>
   </a> 
 </p>
 
