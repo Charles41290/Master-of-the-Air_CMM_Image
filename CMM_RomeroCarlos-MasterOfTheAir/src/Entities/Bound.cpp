@@ -1,18 +1,26 @@
 #include "Bound.h"
 
 
-Bound::Bound(sf::Vector2f position, sf::Vector2f size)
+Bound::Bound(sf::Vector2f position, sf::Vector2f size, bool soundOn, bool textureOn)
 {
-	//Texturas
-	texture.loadFromFile("res\\textures\\asteroids4.png"); // ruta relativa al archivo vcxproj
-	texture.setRepeated(true);
+	if (textureOn)
+	{
+		//Texturas
+		texture.loadFromFile("res\\textures\\asteroids4.png"); // ruta relativa al archivo vcxproj
+		texture.setRepeated(true);
 
-	// geometria
-	body = sf::RectangleShape(size );
-	body.setPosition(position);
-	//body.setFillColor(sf::Color::Blue);
-	body.setTexture(&texture);
-	body.setTextureRect(sf::IntRect(0,0,1280,93)); // me aseguro que
+		// geometria
+		body = sf::RectangleShape(size);
+		body.setPosition(position);
+		body.setTexture(&texture);
+		body.setTextureRect(sf::IntRect(0, 0, 1280, 93)); // me aseguro que
+	}
+	else
+	{
+		body = sf::RectangleShape(size);
+		body.setPosition(position);
+		body.setFillColor(sf::Color(0,0,0,0));
+	}
 
 	// fisica
 	physType = PhysicsType::Static;

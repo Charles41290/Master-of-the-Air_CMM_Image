@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include<iostream>
 
 class Game; // declaración adelantada para evitar referencias circulares
@@ -14,8 +15,11 @@ class MainMenu
 		sf::Text exitOption;
 		sf::Font sampleFont;
 		sf::Font sampleFont2;
-		sf::Texture bttn_texture;
+		sf::Texture bttnTexture;
+		sf::Texture bgTexture;
 		sf::RectangleShape option;
+		sf::RectangleShape bg;
+		sf::Music bgMusic;
 		std::vector<sf::RectangleShape> menuOptions;
 
 		Game* game; // puntero a game -> lo necesito para modificar GameState

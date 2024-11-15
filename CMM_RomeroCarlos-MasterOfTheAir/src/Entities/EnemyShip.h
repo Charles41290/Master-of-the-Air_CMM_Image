@@ -2,7 +2,9 @@
 #include "GameObject.h"
 #include "Bullet.h"
 #include "Bullet2.h"
+#include "Player.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 class EnemyShip : GameObject
 {
@@ -19,6 +21,10 @@ class EnemyShip : GameObject
         float shootTime = 1.0f;
         bool adding = true;
         std::vector<Bullet2*> bullets;
+        sf::SoundBuffer shootBuffer;
+        sf::Sound shootSound;
+        sf::SoundBuffer dmgBuffer;
+        sf::Sound dmgSound;
         sf::RectangleShape healthBar;
         sf::RectangleShape healthBarBg;
 

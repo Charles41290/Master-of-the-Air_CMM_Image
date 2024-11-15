@@ -14,7 +14,7 @@ class Player: public GameObject
 	protected:
 		int maxHealth = 200;
 		int currentHealth;
-		float speed = 200;
+		float speed = 400;
 		float shootTimer = 0;
 		float shootTime = 0.8f;
 		std::string name;
@@ -22,12 +22,13 @@ class Player: public GameObject
 		std::vector<Bullet2*> bullets;
 		sf::SoundBuffer shootBuffer;
 		sf::Sound shootSound;
-		sf::SoundBuffer hitBuffer;
-		sf::Sound hitSound;
+		sf::SoundBuffer dmgBuffer;
+		sf::Sound dmgSound;
 		sf::RectangleShape healthBar;
 		sf::RectangleShape healthBarBg;
 		
 	public:
+		int static score;
 		Player();
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);

@@ -6,16 +6,29 @@
 MainMenu::MainMenu(sf::Vector2u windowSize, Game* game): game(game) // incializo el atributo game de la clase MainMenu -> primer game es el nombre del atributo, segundo game es el arg que le paso en el constructor
 {
 	//Textura del boton
-	bttn_texture.loadFromFile("res\\textures\\Button.png");
+	bttnTexture.loadFromFile("res\\textures\\Button.png");
 	option = sf::RectangleShape(sf::Vector2f(170, 87));
 	option.setFillColor(sf::Color::Blue);
 	for (int i = 0; i < 4; i++)
 	{
 		option.setOrigin(option.getSize().x / 2, option.getSize().y / 2);
 		option.setPosition(sf::Vector2f(windowSize.x/2,250+i*100));
-		option.setTexture(&bttn_texture);
+		option.setTexture(&bttnTexture);
 		menuOptions.push_back(option);
 	}
+
+	//Background
+	bgTexture.loadFromFile("res\\textures\\spaceship.jpeg");
+	bg = sf::RectangleShape(sf::Vector2f(1280, 720));
+	bg.setTexture(&bgTexture);
+	sf::Color color = bg.getFillColor();
+	color.a = 128;
+	bg.setFillColor(color);
+
+
+	//Sonido
+	bgMusic.openFromFile("res\\sounds\\2_beats_per _second.ogg");
+	bgMusic.setVolume(75);
 
 	//Texto
 	//Titulo
@@ -70,6 +83,13 @@ MainMenu::MainMenu(sf::Vector2u windowSize, Game* game): game(game) // incializo
 
 void MainMenu::Update(sf::Time deltaTime)
 {
+	// Reproduccion de musica  
+	if (bgMusic.getStatus() != sf::SoundSource::Playing) //Si no se está reproduciendo
+	{
+		bgMusic.play();
+	}
+
+	// Navegación en el menu
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 	{
 		game->SetGameState(GameState::Gameplay);
@@ -92,6 +112,7 @@ void MainMenu::Update(sf::Time deltaTime)
 
 void MainMenu::Draw(sf::RenderWindow* window)
 {
+	window->draw(bg);
 	for (int i = 0; i < 4; i++)
 	{
 		window->draw(menuOptions[i]);

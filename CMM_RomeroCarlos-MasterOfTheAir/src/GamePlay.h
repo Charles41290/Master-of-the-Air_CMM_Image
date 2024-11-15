@@ -8,6 +8,7 @@
 #include "Entities/PlayerBullet.h"
 #include "Escenas/Background.h"
 #include "Escenas/DefeatedScene.h"
+#include "Escenas/WinnedScene.h"
 
 enum GameplayState
 {
@@ -27,14 +28,16 @@ class GamePlay
 		GameplayState gamePlayState;
 		Player* player;
 		EnemyShip* enemyShip;
+		EnemyShip* enemyShip2;
+		EnemyShip* enemyShip3;
 		Bound* upperBound;
-		Bound* upperBound2;
-		Bound* upperBound3;
+		Bound* leftBound;
+		Bound* rightBound;
 		Background background;
-		Bullet2* bullet;
 		Game* game;
 		//Escenas - Defeated y Winned
 		DefeatedScene* defeatedScene; // es necesario inicializarla en la lista de Incialización del  constructor 
+		WinnedScene* winnedScene;
 
 
 	public:

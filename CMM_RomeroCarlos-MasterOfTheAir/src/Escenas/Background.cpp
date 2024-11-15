@@ -14,13 +14,16 @@ Background::Background()
 	planet.setOrigin(planet.getSize().x / 2, planet.getSize().y / 2);
 	planet.setPosition(sf::Vector2f(1200, 700));
 	planet.setTexture(&texture2);
+	sf::Color color = planet.getFillColor();
+	color.a = 128;
+	planet.setFillColor(color);
 
 	texture3.loadFromFile("res\\textures\\nebula.png");
 	bg = sf::RectangleShape(sf::Vector2f(1280, 760));
 	//bg.setOrigin(planet.getSize().x / 2, planet.getSize().y / 2);
 	bg.setPosition(sf::Vector2f(0, 0));
 	bg.setTexture(&texture3);
-	sf::Color color = bg.getFillColor();
+	color = bg.getFillColor();
 	color.a = 128;
 	bg.setFillColor(color);
 

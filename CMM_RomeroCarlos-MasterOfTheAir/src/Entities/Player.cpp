@@ -1,7 +1,9 @@
-#include <SFML/Audio.hpp>
+//include <SFML/Audio.hpp>
 #include "Player.h"
 #include "CollisionsHandler.h"
 #include "Bullet2.h"
+
+int Player::score = 0;
 
 Player::Player()
 {
@@ -19,9 +21,13 @@ Player::Player()
 	body.setOrigin(body.getSize().x/2, body.getSize().y/2); // el origen del cuerpo coincide con el baricentro 
 	body.setPosition(sf::Vector2f(100, 460)); // medidos a partir de la esquina sup izquierda 
 	body.setTexture(&texture);
+
 	// Sonidos
 	shootBuffer.loadFromFile("res\\sounds\\laserSmall.ogg");
 	shootSound.setBuffer(shootBuffer);
+	shootSound.setVolume(75);
+	dmgBuffer.loadFromFile("res\\sounds\\explosion1.ogg");
+	dmgSound.setBuffer(dmgBuffer);
 
 	//Barras de salud
 	healthBarBg.setSize(sf::Vector2f(40, 5));
@@ -81,15 +87,9 @@ void Player::Update(sf::Time deltaTime)
 	if (magnitude > 0) // > 0 implica cambio en el vector direccion
 	{
 		sf::Vector2f dirNormalized = direction / magnitude; // normalizo el vector direction
-		/*body.setPosition(body.getPosition()+dirNormalized * speed * deltaTime.asSeconds());*/
 		body.move(dirNormalized * speed * deltaTime.asSeconds());
-		// para asegurarme que la barra no sobrepase el upperbound
-		if (healthBar.getPosition().y > 50 and healthBarBg.getPosition().y > 50)
-		{
-			healthBarBg.move(dirNormalized * speed * deltaTime.asSeconds());
-			healthBar.move(dirNormalized * speed * deltaTime.asSeconds());
-		}
-		
+			healthBarBg.setPosition(sf::Vector2f(body.getPosition().x - 15, body.getPosition().y - body.getSize().y / 2 - 10));
+			healthBar.setPosition(sf::Vector2f(body.getPosition().x - 15, body.getPosition().y - body.getSize().y / 2 - 10));
 	}
 
 	//Actualizo la posicion de las balas
@@ -115,6 +115,7 @@ void Player::OnCollisionEnter(GameObject* other)
 	if (currentHealth >0 && other->GetType() == "benemy")
 	{
 		currentHealth -= 20;
+		dmgSound.play();
 		std::cout << "Player-Health: "<< currentHealth << std::endl;
 	}
 	float healthPercentage = (float)currentHealth / (float)maxHealth;

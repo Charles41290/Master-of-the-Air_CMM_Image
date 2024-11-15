@@ -7,18 +7,24 @@
 #include <SFML/Graphics.hpp>
 
 
-GamePlay::GamePlay(sf::Vector2u windowSize, Game* game) : game(game)
+GamePlay::GamePlay(sf::Vector2u windowSize, Game* game) : game(game), background() // inicializo game y background en la lista de inicializacion
 {
 	gamePlayState = GameplayState::playing;
-	Background background();
+	//Background background();
 	player = new Player();
 	enemyShip = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 4));
+	enemyShip2 = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 2));
+	enemyShip3 = new EnemyShip(sf::Vector2f(screenWidth - 100, 3* screenHeight / 4));
 
 	//Bounds
-	upperBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(1280, 93));
+	upperBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(1280, 93), true, true);
+	leftBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(20, 720), false, false);
+	rightBound = new Bound(sf::Vector2f(1260, 0), sf::Vector2f(20, 720), false, false);
+
 
 	//Escenas
 	defeatedScene = new DefeatedScene(windowSize, game);
+	winnedScene = new WinnedScene(windowSize);
 
 }
 
@@ -29,7 +35,10 @@ void GamePlay::Update(sf::Time deltaTime)
 		gamePlayState = GameplayState::defeated;
 	}
 
-
+	if (Player::score == 100)
+	{
+		gamePlayState = GameplayState::winnned;
+	}
 
 	switch(gamePlayState)
 	{
@@ -41,6 +50,8 @@ void GamePlay::Update(sf::Time deltaTime)
 			background.Update(deltaTime);
 			player->Update(deltaTime);
 			enemyShip->Update(deltaTime);
+			enemyShip2->Update(deltaTime);
+			enemyShip3->Update(deltaTime);
 			CollisionsHandler::Update();
 			break;
 
@@ -52,18 +63,16 @@ void GamePlay::Update(sf::Time deltaTime)
 				ResetGame();
 				
 			}
-			//std::cout << "Defeated" << std::endl;
 			break;
-
+		case winnned:
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+			{
+				game->SetGameState(GameState::MnMenu);
+				gamePlayState = GameplayState::playing;
+				ResetGame();
+			}
+			break;
 	}
-
-	//background.Update(deltaTime);
-	//player->Update(deltaTime);
-	//enemyShip->Update(deltaTime);
-	////bullet->Update(deltaTime);
-	////upperBound->GetBody().rotate(1.0f*deltaTime.asSeconds());
-	//CollisionsHandler::Update();
-	
 }
 
 void GamePlay::Draw(sf::RenderWindow* window)
@@ -73,40 +82,35 @@ void GamePlay::Draw(sf::RenderWindow* window)
 	{
 	case playing:
 		upperBound->Draw(window);
+		leftBound->Draw(window);
+		rightBound->Draw(window);
 		background.Draw(window);
 		player->Draw(window);
 		enemyShip->Draw(window);
+		enemyShip2->Draw(window);
+		enemyShip3->Draw(window);
 		break;
 
 	case defeated:
 		defeatedScene->Draw(window);
-		std::cout << "Defeated" << std::endl;
 		break;
 
 	case winnned:
-
+		winnedScene->Draw(window);
 		break;
-
 	}
-	/*upperBound->Draw(window);
-	background.Draw(window);
-	player->Draw(window);
-	enemyShip->Draw(window);*/
-	//bullet->Draw(window);
-
-	//bullet->Draw(window);
-	
-	//upperBound2->Draw(window);
-	//upperBound3->Draw(window);
-	
 }
 
 void GamePlay::ResetGame()
 {
+	std::cout << "En Reset Game" << std::endl;
 	CollisionsHandler::Reset();
 	player = new Player();
+	Player::score = 0;
 	enemyShip = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 4));
-
+	enemyShip2 = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 2));
+	enemyShip3 = new EnemyShip(sf::Vector2f(screenWidth - 100, 3 * screenHeight / 4));
 	//Bounds
-	upperBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(1280, 93));
+	upperBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(1280, 93), true, true);
+	leftBound = new Bound(sf::Vector2f(0, 0), sf::Vector2f(1280, 93), false, false);
 }

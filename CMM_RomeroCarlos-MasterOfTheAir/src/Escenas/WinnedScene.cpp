@@ -27,4 +27,6 @@ void WinnedScene::Update(sf::Time deltaTime)
 
 void WinnedScene::Draw(sf::RenderWindow* window)
 {
+	window->draw(winnedText);
+	window->draw(pressToContinueText);
 }

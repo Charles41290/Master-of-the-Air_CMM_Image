@@ -5,7 +5,7 @@
 class Bound: public GameObject
 {
 	public:
-		Bound(sf::Vector2f position, sf::Vector2f size);
+		Bound(sf::Vector2f position, sf::Vector2f size, bool soundOn, bool textureOn);
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);
 		void OnCollisionEnter(GameObject* other) override;
