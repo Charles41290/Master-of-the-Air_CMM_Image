@@ -5,7 +5,9 @@
 </p>
 
 # Aligment
+In the year 3024, humanity has conquered space and established colonies on various planets. However, a mysterious alien force known as "The Cochotones" begins attacking these colonies, destroying ships and leaving chaos in its wake across the galaxy.
 
+You are an inexperienced pilot who dreams of becoming the Master of The Air...
 
 This is a game developed by a student from <a href="https://www.imagecampus.edu.ar/">Image Campus</a>
 
