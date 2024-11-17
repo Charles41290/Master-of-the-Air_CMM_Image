@@ -30,6 +30,7 @@ class Player: public GameObject
 	public:
 		int static score;
 		Player();
+		~Player();
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);
 		int GetHealth() { return this->currentHealth; };

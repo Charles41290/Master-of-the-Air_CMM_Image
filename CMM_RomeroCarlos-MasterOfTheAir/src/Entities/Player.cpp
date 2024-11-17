@@ -43,6 +43,15 @@ Player::Player()
 	CollisionsHandler::AddObject(this);
 }
 
+Player::~Player()
+{
+	for (Bullet2* bullet : bullets) {
+		delete bullet; // Libera cada puntero.
+	}
+	bullets.clear();
+
+}
+
 void Player::Update(sf::Time deltaTime)
 {
 
