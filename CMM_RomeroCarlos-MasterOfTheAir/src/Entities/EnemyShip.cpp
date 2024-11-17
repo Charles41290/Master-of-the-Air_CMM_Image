@@ -46,6 +46,14 @@ EnemyShip::EnemyShip(sf::Vector2f pos)
     CollisionsHandler::AddObject(this);
 }
 
+EnemyShip::~EnemyShip()
+{
+    for (Bullet2* bullet : bullets) {
+        delete bullet; // Libera cada puntero.
+    }
+    bullets.clear();
+}
+
 float EnemyShip::GetOscilationSpeed()
 {
 	float initialOscilationSpeed = 5000.0f;
@@ -85,14 +93,18 @@ void EnemyShip::Update(sf::Time deltaTime)
             body.setPosition(sf::Vector2f(body.getPosition().x, initialY + 50.0f * std::sin(2 * oscilationSpeed * PI * deltaTime.asSeconds())));
             healthBarBg.setPosition(sf::Vector2f(body.getPosition().x - 15, body.getPosition().y - body.getSize().y / 2 - 10));
             healthBar.setPosition(sf::Vector2f(body.getPosition().x - 15, body.getPosition().y - body.getSize().y / 2 - 10));
-            
             oscilationTimer = 0;
         }
 
         // Lógica de disparo
         shootTimer += deltaTime.asSeconds();
-        float bulletSpeed = -800.0f;
-        if (shootTimer > shootTime)
+        updateSpeedTimer += deltaTime.asSeconds();
+        if(updateSpeedTimer > 3) // aumento la velocidad de disparo cada 3 segundos
+        {
+            bulletSpeed -= 50;
+            updateSpeedTimer = 0;
+        }
+        if (shootTimer  > shootTime)
         {
             bullets.push_back(new Bullet2(body.getPosition(), sf::Vector2f(25, 12), bulletSpeed, "benemy"));
             shootSound.play();
@@ -127,7 +139,6 @@ void EnemyShip::OnCollisionEnter(GameObject* other)
         currentHealth -= 10;
         dmgSound.play();
         Player::score += 10;
-        std::cout << "Player Score: " << Player::score << std::endl;
     }
     float healthPercentage = (float)currentHealth / (float)maxHealth;
     healthBar.setSize(sf::Vector2f(40 * healthPercentage, 5));

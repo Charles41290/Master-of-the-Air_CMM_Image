@@ -25,8 +25,8 @@ class MainMenu
 		Game* game; // puntero a game -> lo necesito para modificar GameState
 		
 	public:
-		//MainMenu(sf::Vector2u windowSize);
 		MainMenu(sf::Vector2u windowSize, Game* game);
+		~MainMenu();
 		//MainMenu(sf::Vector2u windowSize);
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);

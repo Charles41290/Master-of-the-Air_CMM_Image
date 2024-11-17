@@ -16,6 +16,7 @@ class DefeatedScene
 
 	public:
 		DefeatedScene(sf::Vector2u windowSize, Game* game);
+		~DefeatedScene();
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);
 		

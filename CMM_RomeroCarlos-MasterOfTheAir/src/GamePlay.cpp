@@ -10,7 +10,6 @@
 GamePlay::GamePlay(sf::Vector2u windowSize, Game* game) : game(game), background() // inicializo game y background en la lista de inicializacion
 {
 	gamePlayState = GameplayState::playing;
-	//Background background();
 	player = new Player();
 	enemyShip = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 4));
 	enemyShip2 = new EnemyShip(sf::Vector2f(screenWidth - 100, screenHeight / 2));
@@ -26,6 +25,10 @@ GamePlay::GamePlay(sf::Vector2u windowSize, Game* game) : game(game), background
 	defeatedScene = new DefeatedScene(windowSize, game);
 	winnedScene = new WinnedScene(windowSize);
 
+}
+
+GamePlay::~GamePlay()
+{
 }
 
 void GamePlay::Update(sf::Time deltaTime)
@@ -103,7 +106,6 @@ void GamePlay::Draw(sf::RenderWindow* window)
 
 void GamePlay::ResetGame()
 {
-	std::cout << "En Reset Game" << std::endl;
 	CollisionsHandler::Reset();
 	player = new Player();
 	Player::score = 0;

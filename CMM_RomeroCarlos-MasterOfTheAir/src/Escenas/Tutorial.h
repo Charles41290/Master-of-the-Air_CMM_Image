@@ -18,6 +18,7 @@ class Tutorial
 
     public:
         Tutorial(sf::Vector2u windowSize, Game* game);
+        ~Tutorial();
         void Update(sf::Time deltaTime);
         void Draw(sf::RenderWindow* window);
 

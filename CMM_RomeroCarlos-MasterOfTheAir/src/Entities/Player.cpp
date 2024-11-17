@@ -5,10 +5,11 @@
 
 int Player::score = 0;
 
-Player::Player()
+Player::Player(): scr(score)
 {
 	//Seteamos health
 	currentHealth = maxHealth;
+
 
 	// Configuro el tipo a player
 	type = "player";
@@ -54,6 +55,8 @@ Player::~Player()
 
 void Player::Update(sf::Time deltaTime)
 {
+	// actualizamos el score
+	scr.Update(deltaTime, score);
 
 	//Logica de disparo
 	shootTimer += deltaTime.asSeconds(); //inicializo el timer de disparo
@@ -117,6 +120,7 @@ void Player::Draw(sf::RenderWindow* window)
 	{
 		bullets[i]->Draw(window);
 	}
+	scr.Draw(window);
 }
 
 void Player::OnCollisionEnter(GameObject* other)
@@ -125,7 +129,6 @@ void Player::OnCollisionEnter(GameObject* other)
 	{
 		currentHealth -= 20;
 		dmgSound.play();
-		std::cout << "Player-Health: "<< currentHealth << std::endl;
 	}
 	float healthPercentage = (float)currentHealth / (float)maxHealth;
 	healthBar.setSize(sf::Vector2f(40*healthPercentage,5));

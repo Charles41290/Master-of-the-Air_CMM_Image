@@ -68,6 +68,10 @@ Credits::Credits(sf::Vector2u windowSize, Game* game): game(game)
 
 }
 
+Credits::~Credits()
+{
+}
+
 void Credits::Update(sf::Time deltaTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))

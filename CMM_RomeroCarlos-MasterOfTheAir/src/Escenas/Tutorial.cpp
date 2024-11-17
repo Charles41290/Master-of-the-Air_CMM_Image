@@ -33,7 +33,7 @@ Tutorial::Tutorial(sf::Vector2u windowSize, Game* game): game(game)
 	instruction2.setPosition(sf::Vector2f(windowSize.x / 2, 250));
 
 	instruction3.setFont(sampleFont2);
-	instruction3.setString("You'll become a master of the air when you get a score of 100");
+	instruction3.setString("You'll become a master of the air when you get a score of 300");
 	instruction3.setCharacterSize(20);
 	instruction3.setFillColor(sf::Color::Green);
 	auxRect = instruction3.getGlobalBounds();
@@ -48,6 +48,10 @@ Tutorial::Tutorial(sf::Vector2u windowSize, Game* game): game(game)
 	auxRect = pressToContinuesText.getGlobalBounds();
 	pressToContinuesText.setOrigin(sf::Vector2f(auxRect.width / 2, auxRect.height / 2));
 	pressToContinuesText.setPosition(sf::Vector2f(windowSize.x / 2, 600));
+}
+
+Tutorial::~Tutorial()
+{
 }
 
 void Tutorial::Update(sf::Time deltaTime)

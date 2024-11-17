@@ -6,6 +6,7 @@
 #include <SFML/Audio.hpp>
 #include "GameObject.h"
 #include "PlayerBullet.h"
+#include "../Escenas/Score.h"
 #include "Bullet2.h"
 
 
@@ -26,6 +27,7 @@ class Player: public GameObject
 		sf::Sound dmgSound;
 		sf::RectangleShape healthBar;
 		sf::RectangleShape healthBarBg;
+		Score scr;
 		
 	public:
 		int static score;

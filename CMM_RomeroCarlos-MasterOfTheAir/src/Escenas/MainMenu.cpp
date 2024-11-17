@@ -1,8 +1,6 @@
 #include "MainMenu.h"
 #include "../Game.h" // Al incluir el Game.h se genera una referencia circular -> esto se evita incluyendo Game.h en MainMenu.cpp ya que los .h y los .cpp se compilan de forma independiente
 
-
-//MainMenu::MainMenu(sf::Vector2u windowSize)
 MainMenu::MainMenu(sf::Vector2u windowSize, Game* game): game(game) // incializo el atributo game de la clase MainMenu -> primer game es el nombre del atributo, segundo game es el arg que le paso en el constructor
 {
 	//Textura del boton
@@ -77,8 +75,10 @@ MainMenu::MainMenu(sf::Vector2u windowSize, Game* game): game(game) // incializo
 	auxRect = exitOption.getGlobalBounds();
 	exitOption.setOrigin(sf::Vector2f(auxRect.width / 2, auxRect.height / 2));
 	exitOption.setPosition(sf::Vector2f(windowSize.x / 2, menuOptions[3].getPosition().y - 5));
+}
 
-
+MainMenu::~MainMenu()
+{
 }
 
 void MainMenu::Update(sf::Time deltaTime)
@@ -107,7 +107,6 @@ void MainMenu::Update(sf::Time deltaTime)
 	{
 		game->SetGameState(GameState::None);
 	}
-
 }
 
 void MainMenu::Draw(sf::RenderWindow* window)
@@ -122,7 +121,4 @@ void MainMenu::Draw(sf::RenderWindow* window)
 	window->draw(tutorialOption);
 	window->draw(creditsOption);
 	window->draw(exitOption);
-
-	
-
 }

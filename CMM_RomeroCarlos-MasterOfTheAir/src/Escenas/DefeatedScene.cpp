@@ -3,7 +3,7 @@
 
 DefeatedScene::DefeatedScene(sf::Vector2u windowSize, Game* game):game(game)
 {
-    sampleFont.loadFromFile("res\\fonts\\TADR.ttf");
+    sampleFont.loadFromFile("res\\fonts\\SourGummy-Light.ttf");
 	defeatedText.setFont(sampleFont);
 	defeatedText.setString("Defeated");
 	defeatedText.setCharacterSize(70);       
@@ -12,7 +12,6 @@ DefeatedScene::DefeatedScene(sf::Vector2u windowSize, Game* game):game(game)
 	defeatedText.setOrigin(sf::Vector2f(auxRect.width / 2, auxRect.height / 2));
 	defeatedText.setPosition(sf::Vector2f(windowSize.x / 2, windowSize.y / 2));
 
-	sampleFont.loadFromFile("res\\fonts\\TADR.ttf");
 	pressToContinueText.setFont(sampleFont);
 	pressToContinueText.setString("[C] to continue");
 	pressToContinueText.setCharacterSize(30);
@@ -23,12 +22,13 @@ DefeatedScene::DefeatedScene(sf::Vector2u windowSize, Game* game):game(game)
 
 }
 
+DefeatedScene::~DefeatedScene()
+{
+}
+
 void DefeatedScene::Update(sf::Time deltaTime)
 {
-	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
-	{
-		game->SetGameState(GameState::MnMenu);
-	}*/
+	
 }
 
 void DefeatedScene::Draw(sf::RenderWindow* window)

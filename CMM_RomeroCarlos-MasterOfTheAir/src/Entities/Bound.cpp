@@ -28,6 +28,10 @@ Bound::Bound(sf::Vector2f position, sf::Vector2f size, bool soundOn, bool textur
 
 }
 
+Bound::~Bound()
+{
+}
+
 void Bound::Update(sf::Time deltaTime)
 {
 }

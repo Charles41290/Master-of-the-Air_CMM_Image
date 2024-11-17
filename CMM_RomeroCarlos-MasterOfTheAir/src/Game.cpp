@@ -21,6 +21,10 @@ Game::Game()
 
 }
 
+Game::~Game()
+{
+}
+
 void Game::Run()
 {
 	while (window->isOpen())
@@ -40,16 +44,12 @@ void Game::Run()
 void Game::Update()
 {
 	deltaTime = clock.restart();
-
-	/*std::cout << "Running";*/
-	//std::cout << (int)gameState;
 	switch (gameState)
 	{
 	case None:
 		window->close();
 		break;
 	case MnMenu:
-		//std::cout << "Dentro de main menu";
 		mainMenu->Update(deltaTime);
 		break;
 	case Gameplay:
@@ -62,12 +62,8 @@ void Game::Update()
 		tutorial->Update(deltaTime);
 		break;
 	default:
-		std::cout << "Default option";
 		break;
 	}
-
-	//gameplay->Update(deltaTime);
-	
 }
 
 void Game::Draw()
@@ -92,11 +88,7 @@ void Game::Draw()
 		tutorial->Draw(window);
 		break;
 	default:
-		std::cout << "Default option";
 		break;
 	}
-
-	//gameplay->Draw(window);
-
 	window->display();
 }

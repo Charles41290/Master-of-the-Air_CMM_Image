@@ -19,6 +19,8 @@ class EnemyShip : GameObject
         float oscilationSpeed;
         float shootTimer = 0.0f;
         float shootTime = 1.0f;
+        float bulletSpeed = -400.0;
+        float updateSpeedTimer = 0.0;
         bool adding = true;
         std::vector<Bullet2*> bullets;
         sf::SoundBuffer shootBuffer;
@@ -30,6 +32,7 @@ class EnemyShip : GameObject
 
     public:
         EnemyShip(sf::Vector2f pos);
+        ~EnemyShip();
         int GetHealth() { return this->currentHealth; }
         float GetOscilationSpeed();
         float PingPong(sf::Time deltaTime, float length);

@@ -180,6 +180,7 @@ XCOPY "$(ProjectDir)res\fonts" "$(TargetDir)res\fonts" /e/h/y/s</Command>
     <ClCompile Include="src\Escenas\Credits.cpp" />
     <ClCompile Include="src\Escenas\DefeatedScene.cpp" />
     <ClCompile Include="src\Escenas\MainMenu.cpp" />
+    <ClCompile Include="src\Escenas\Score.cpp" />
     <ClCompile Include="src\Escenas\Tutorial.cpp" />
     <ClCompile Include="src\Escenas\WinnedScene.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -201,6 +202,7 @@ XCOPY "$(ProjectDir)res\fonts" "$(TargetDir)res\fonts" /e/h/y/s</Command>
     <ClInclude Include="src\Escenas\Credits.h" />
     <ClInclude Include="src\Escenas\DefeatedScene.h" />
     <ClInclude Include="src\Escenas\MainMenu.h" />
+    <ClInclude Include="src\Escenas\Score.h" />
     <ClInclude Include="src\Escenas\Tutorial.h" />
     <ClInclude Include="src\Escenas\WinnedScene.h" />
     <ClInclude Include="src\Game.h" />

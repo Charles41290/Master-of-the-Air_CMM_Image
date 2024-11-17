@@ -19,6 +19,7 @@ class Credits
 
     public:
         Credits(sf::Vector2u windowSize, Game* game);
+        ~Credits();
         void Update(sf::Time deltaTime);
         void Draw(sf::RenderWindow* window);
 

@@ -31,8 +31,8 @@ public:
 	
 	sf::Time deltaTime;
 
-
 	Game();
+	~Game();
 	void SetGameState(GameState gs) { this->gameState = gs;}
 	void Run();
 	void Update();

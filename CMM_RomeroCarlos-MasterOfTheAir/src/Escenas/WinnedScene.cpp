@@ -2,7 +2,7 @@
 
 WinnedScene::WinnedScene(sf::Vector2u windowSize)
 {
-	sampleFont.loadFromFile("res\\fonts\\TADR.ttf");
+	sampleFont.loadFromFile("res\\fonts\\SourGummy-Light.ttf");
 	winnedText.setFont(sampleFont);
 	winnedText.setString("GREAT JOB! YOU'RE A MASTER OF THE AIR");
 	winnedText.setCharacterSize(70);
@@ -19,6 +19,10 @@ WinnedScene::WinnedScene(sf::Vector2u windowSize)
 	auxRect = pressToContinueText.getGlobalBounds();// utilizo un auxRect para centrar el título
 	pressToContinueText.setOrigin(sf::Vector2f(auxRect.width / 2, auxRect.height / 2));
 	pressToContinueText.setPosition(sf::Vector2f(windowSize.x / 2, windowSize.y / 2 + 65));
+}
+
+WinnedScene::~WinnedScene()
+{
 }
 
 void WinnedScene::Update(sf::Time deltaTime)

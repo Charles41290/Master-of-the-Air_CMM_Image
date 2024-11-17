@@ -9,6 +9,7 @@
 #include "Escenas/Background.h"
 #include "Escenas/DefeatedScene.h"
 #include "Escenas/WinnedScene.h"
+#include "Escenas/Score.h"
 
 enum GameplayState
 {
@@ -42,6 +43,7 @@ class GamePlay
 
 	public:
 		GamePlay(sf::Vector2u windowSize,Game* game);
+		~GamePlay();
 		void Update(sf::Time deltaTime);
 		void Draw(sf::RenderWindow* window);
 		void ResetGame();
